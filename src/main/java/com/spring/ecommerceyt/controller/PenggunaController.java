@@ -3,12 +3,14 @@ package com.spring.ecommerceyt.controller;
 import com.spring.ecommerceyt.entity.Pengguna;
 import com.spring.ecommerceyt.service.PenggunaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@PreAuthorize("isAuthenticated()")
 public class PenggunaController {
     @Autowired
     public PenggunaService penggunaService;
